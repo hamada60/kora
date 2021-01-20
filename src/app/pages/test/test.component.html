@@ -1,0 +1,25 @@
+<p>test works!</p>
+<div class="container">
+    <form #todo="ngForm" (ngSubmit)="gettodo(todo)">
+        <div class="mb-3">
+          <label class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" ngModel>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" name="pass" ngModel>
+        </div>
+        <div class="mb-3">
+            <select name="type" ngModel>
+                <option *ngFor="let t of typetodo; let i = index" value="{{t}}">{{t}}</option>
+            </select>    
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" name="check" ngModel>
+          <label class="form-check-label">Check me out</label>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<h3>{{todo.value | json}}</h3>

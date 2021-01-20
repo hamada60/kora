@@ -1,0 +1,19 @@
+<section *ngIf="news.length < 1; else showNews">
+    <div class="alert alert-danger" role="alert">
+        No Data
+    </div>
+</section>
+
+<ng-template #showNews>
+    <section class="container row gx-5">
+        <div class="card p-3 m-5 border bg-light" style="width: 18rem;" *ngFor="let news of news; let i = index">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{news.title}}</h5>
+              <p class="card-text">{{news.content}}</p>
+              <a routerLink="#" class="btn btn-primary">Show More</a>
+            </div>
+          </div>
+    </section>
+</ng-template>
+
